@@ -6,10 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 14:17:23 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/18 14:26:27 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/19 15:24:10 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <stdio.h>
 
 int	ft_toupper(int c)

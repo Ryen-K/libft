@@ -6,10 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:40:16 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/18 14:12:08 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/19 15:14:05 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <stdio.h>
 
 size_t	ft_strlen(const char *s)

@@ -6,10 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:25:30 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/18 13:39:00 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/19 15:23:42 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <stdio.h>
 
 int	ft_isprint(int c)

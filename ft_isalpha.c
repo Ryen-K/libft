@@ -6,10 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 11:39:14 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/18 12:01:43 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/19 15:20:19 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <stdio.h>
 
 int	ft_isalpha(int c)

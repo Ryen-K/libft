@@ -6,10 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 12:05:13 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/18 12:16:18 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/19 15:22:40 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 //#include <stdio.h>
 
 int	ft_isdigit(int c)

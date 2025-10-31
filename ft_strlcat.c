@@ -44,12 +44,16 @@ int main(void)
 
     	printf("// dst = %s\n", dst1a);
 	printf("// src = %s\n", src1);
-        printf("size = 7, result = %zu, expected 8\n", ft_strlcat(dst1a, src1, 7));
-	printf("size = 7, result = %zu, expected 8\n", strlcat(dst1b, src1, 7));
+        printf("size = 7, result = %zu, expected 8\n", 
+		ft_strlcat(dst1a, src1, 7));
+	printf("size = 7, result = %zu, expected 8\n", 
+		strlcat(dst1b, src1, 7));
         printf("// dst = %s\n", dst1b);
         printf("// src = %s\n", src1);
-        printf("size = 2, result = %zu, expected 6\n", ft_strlcat(dst2, src2, 2));
-	printf("size = 2, result = %zu, expected 6\n", strlcat(dst2, src2, 2));
+        printf("size = 2, result = %zu, expected 6\n", 
+		ft_strlcat(dst2, src2, 2));
+	printf("size = 2, result = %zu, expected 6\n", 
+		strlcat(dst2, src2, 2));
         printf("// dst = %s\n", dst2);
         printf("// src = %s\n", src2);
         return (0);

@@ -10,4 +10,60 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+//#include <stdio.h>
 
+static int	count(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char	*dest;
+
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	len = count(n);
+	dest = ft_calloc(len + 1, sizeof(char));
+	if (!dest)
+		return (NULL);
+	if (n < 0)
+	{
+		dest[0] = '-';
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		dest[len - 1] = n % 10 + '0';
+		len--;
+		n /= 10;
+	}
+	return (dest);
+}
+/*
+int	main(void)
+{
+	printf("%s \n", ft_itoa(-2147483648));
+        printf("%s \n", ft_itoa(-1));
+        printf("%s \n", ft_itoa(0));
+        printf("%s \n", ft_itoa(1));
+        printf("%s \n", ft_itoa(2147483647));
+	return (0);
+}*/

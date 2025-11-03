@@ -156,19 +156,16 @@ int	main(void)
 
 	printf("// dst = %s\n", dst1a);
 	printf("// src = %s\n", src1);
-        printf("size = 7, result = %zu, expected 8\n", 
-		ft_strlcat(dst1a, src1, 7));
-	printf("size = 7, result = %zu, expected 8\n", 
-		strlcat(dst1b, src1, 7));
-        printf("// dst = %s\n", dst1b);
-        printf("// src = %s\n", src1);
-        printf("size = 2, result = %zu, expected 6\n", 
-		ft_strlcat(dst2, src2, 2));
-	printf("size = 2, result = %zu, expected 6\n", 
-		strlcat(dst2, src2, 2));
-        printf("// dst = %s\n", dst2);
-        printf("// src = %s\n", src2);
-        return (0);
+	printf("ft: size = 7, result = %zu, expected 8\n", ft_strlcat(dst1a, src1, 7));
+	// use -lbsd
+	printf("regular: size = 7, result = %zu, expected 8\n", strlcat(dst1b, src1, 7));
+	printf("// dst = %s\n", dst1b);
+	printf("// src = %s\n", src1);
+	printf("ft: size = 2, result = %zu, expected 6\n", ft_strlcat(dst2, src2, 2));
+	// use -lbsd
+	printf("regular: size = 2, result = %zu, expected 6\n", strlcat(dst2, src2, 2));
+	printf("// dst = %s\n", dst2);
+	printf("// src = %s\n", src2);
 
 // ft_toupper
     printf("/* ***** ft_toupper ***** */\n");
@@ -237,7 +234,7 @@ int	main(void)
     printf("\n");
 	char	test_str[] = "this is an example";
 
-	printf("%s", ft_strnstr(test_str, "example", 12));
+	printf("%s", ft_strnstr(test_str, "example", 25));
     printf("\n");
 // ft_atoi
     printf("/* ***** ft_atoi ***** */\n");
@@ -254,7 +251,7 @@ int	main(void)
 	int	*t1 = ft_calloc(5, sizeof(int));
 	char	*t2 = ft_calloc(10, sizeof(char));
 	double	*t3 = ft_calloc(3, sizeof(double));
-	void	*t4 = ft_calloc(0, sizeof(int));
+	void	*t4 = ft_calloc(0, 0);
 	i = 0;
 	printf("t1 (5 * int):\n");
 	while (i < 5)

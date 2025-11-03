@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:40:50 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:40:52 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 16:06:57 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -31,9 +30,3 @@ char	*ft_strdup(const char *s)
 	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	printf("result: %s \n", ft_strdup("kamel miboun :)"));
-	return (0);
-}*/

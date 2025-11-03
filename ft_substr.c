@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:41:41 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:41:44 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 14:30:21 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -37,12 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	printf("result: %s\n", ft_substr("this is a test", 10, 4));
-	printf("result: %s\n", ft_substr("this is a test", 13, 4));
-	printf("result: %s\n", ft_substr("this is a test", 15, 4));	
-	printf("result: %s\n", ft_substr("this is a test", 2, 15));
-	return (0);
-}*/

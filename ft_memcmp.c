@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:39:28 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:39:30 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 16:02:47 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -30,13 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int     main(void)
-{
-        printf("result = %d (exp 0) \n", ft_memcmp("hello1", "hello2", 3));
-        printf("result = %d (exp pos)\n", ft_memcmp("hello7", "hello2", 6));
-        printf("result = %d (exp neg)\n", ft_memcmp("hello1", "hello2", 12));
-        printf("result = %d (exp 0) \n", ft_memcmp("hello", "hello", 5));
-        return (0);
-}
-*/

@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:40:06 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:40:09 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 16:04:49 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -37,13 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sign);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", ft_atoi(" ---+--+1234ab567"));
-	printf("%d\n", ft_atoi(" +1234ab567"));
-	printf("%d\n", ft_atoi(" -1234ab567"));
-	printf("%d\n", ft_atoi(" +i1234ab567"));
-	printf("%d\n", ft_atoi(" 123456789"));
-	return (0);
-}*/

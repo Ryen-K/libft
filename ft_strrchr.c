@@ -6,11 +6,10 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:38:13 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:38:16 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 15:59:43 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -26,14 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-        char    *str = "abcdefghijklmnopqrstuvwxyz";
-        char    ch = 'l';
-        char    *res;
-
-        res = ft_strrchr(str, ch);
-        printf("last occ of '%c':  %s\n", ch, res);
-        return (0);
-}*/

@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 11:39:14 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:20:19 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 15:43:36 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_isalpha(int c)
 {
@@ -19,19 +18,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-/*
-int main(void)
-{
-	printf("for '1' expected 0 -> %d \n", ft_isalpha('1'));
-	printf("for 'a' expected 1 -> %d \n", ft_isalpha('a'));
-	printf("for 6 expected 0 -> %d \n", ft_isalpha(6));
-	printf("for 120  expected 1 -> %d \n", ft_isalpha(120));
-	printf("for '/' expected 0 -> %d \n", ft_isalpha('/'));
-	printf("for 666 expected 0 -> %d \n", ft_isalpha(666));
-	printf("for -6 expected 0 -> %d \n", ft_isalpha(-6));
-
-
-	
-	return (0);
-}
-*/

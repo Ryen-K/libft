@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:42:22 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:42:24 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 14:32:35 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 static int	verif(char input, const char *set)
 {
@@ -52,12 +51,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		dest[i++] = s1[start++];
 	return (dest);
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_strtrim("--+this is a test*-", "-*+"));
-	printf("%s\n", ft_strtrim("", "Z"));
-	printf("%s\n", ft_strtrim("--+this is a test*-", ""));
-	printf("%s\n", ft_strtrim("this is a test", "t"));
-	return (0);
-}*/

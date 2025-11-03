@@ -6,12 +6,11 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:25:30 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/10/19 15:23:42 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/11/03 15:46:52 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_isprint(int c)
 {
@@ -19,13 +18,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("-1 -> %d (expected 0)\n", ft_isprint(-1));
-    printf("31 -> %d (expected 0)\n", ft_isprint(31));
-    printf("100 -> %d (expected 1)\n", ft_isprint(100));
-    printf("127 -> %d (expected 0)\n", ft_isprint(127));
-    printf("128 -> %d (expected 0)\n", ft_isprint(128));
-	return (0);
-}*/

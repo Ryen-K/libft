@@ -43,29 +43,39 @@ static size_t	count_len(char const *s, char c)
 	return (len);
 }
 
-static char	**fill_arr(char **arr, char const *s, char c)
+static char	**free_arr(char **arr, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
+
+static char	**fill_arr(char **arr, char const *s, char c, size_t words)
 {
 	size_t	i;
 	size_t	len;
-	size_t	start;
 	size_t	count;
 
 	i = 0;
 	count = 0;
-	while (s[i])
+	while (count < words)
 	{
 		len = 0;
-		start = 0;
 		while (s[i] == c && s[i])
 			i++;
-		start = i;
 		len = count_len(&s[i], c);
+		arr[count] = ft_substr(s, i, len);
+		if (!arr[count])
+			return (free_arr(arr, count));
+		count++;
 		i += len;
-		if (len > 0)
-		{
-			arr[count] = ft_substr(s, start, len);
-			count++;
-		}
 	}
 	arr[count] = NULL;
 	return (arr);
@@ -82,5 +92,5 @@ char	**ft_split(char const *s, char c)
 	arr = ft_calloc(words + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
-	return (fill_arr(arr, s, c));
+	return (fill_arr(arr, s, c, words));
 }

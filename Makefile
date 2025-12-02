@@ -6,66 +6,82 @@
 #    By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 19:07:44 by rkamkoum          #+#    #+#              #
-#    Updated: 2025/11/03 16:45:57 by rkamkoum         ###   ####lausanne.ch    #
+#    Updated: 2025/12/02 15:57:41 by rkamkoum         ###   ####lausanne.ch    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 	ft_atoi.c		\
-		ft_bzero.c		\
-		ft_calloc.c		\
-		ft_isalnum.c	\
-		ft_isalpha.c	\
-		ft_isascii.c	\
-		ft_isdigit.c	\
-		ft_isprint.c	\
-		ft_itoa.c		\
-		ft_memchr.c		\
-		ft_memcmp.c		\
-		ft_memcpy.c		\
-		ft_memmove.c	\
-		ft_memset.c		\
-		ft_putchar_fd.c	\
-		ft_putendl_fd.c	\
-		ft_putnbr_fd.c	\
-		ft_putstr_fd.c	\
-		ft_split.c		\
-		ft_strchr.c		\
-		ft_strdup.c		\
-		ft_striteri.c	\
-		ft_strjoin.c	\
-		ft_strlcat.c	\
-		ft_strlcpy.c	\
-		ft_strlen.c		\
-		ft_strmapi.c	\
-		ft_strncmp.c	\
-		ft_strnstr.c	\
-		ft_strrchr.c	\
-		ft_strtrim.c	\
-		ft_substr.c		\
-		ft_tolower.c	\
-		ft_toupper.c 
+# Variables
 
-NAME = libft.a
+NAME			= libft.a
 
-OBJS = $(SRCS:.c=.o)
+INCLUDE			= .
+SRC_DIR			= src/
+OBJ_DIR			= obj/
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC			= cc
+CFLAGS			= -Wall -Wextra -Werror -I
+RM			= rm -f
+AR			= ar rcs
+
+# Sources
+
+FUNCTS_TO_DIR		= ft_to/
+FUNCTS_TO		= ft_atoi ft_itoa ft_tolower ft_toupper
+
+FUNCTS_MEM_DIR		= ft_mem/
+FUNCTS_MEM		= ft_bzero ft_calloc ft_memchr ft_memcmp ft_memcpy ft_memmove ft_memset
+
+FUNCTS_IS_DIR		= ft_is/
+FUNCTS_IS		= ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
+
+FUNCTS_PUT_DIR		= ft_put/
+FUNCTS_PUT		= ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
+
+FUNCTS_STR_DIR		= ft_str/
+FUNCTS_STR		= ft_split ft_strchr ft_strdup ft_striteri ft_strjoin	\
+			ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp	\
+			ft_strnstr ft_strrchr ft_strtrim ft_substr			
+
+SRC_FILES+=$(addprefix $(FUNCTS_TO_DIR),$(FUNCTS_TO))
+SRC_FILES+=$(addprefix $(FUNCTS_MEM_DIR),$(FUNCTS_MEM))
+SRC_FILES+=$(addprefix $(FUNCTS_IS_DIR),$(FUNCTS_IS))
+SRC_FILES+=$(addprefix $(FUNCTS_PUT_DIR),$(FUNCTS_PUT))
+SRC_FILES+=$(addprefix $(FUNCTS_STR_DIR),$(FUNCTS_STR))
+
+SRC		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+OBJSF		= .cache_exists
+
+###
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+	@ranlib $(NAME)
 	@echo "libft done !"
 
-%.o : %.c libft.h
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJSF)
 	@echo "Compiling.."
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(OBJSF):
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_TO_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_MEM_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_IS_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_PUT_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_STR_DIR)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) -r $(OBJ_DIR)
+	$(RM) $(OBJSF)
+	@echo "libft object files: cleaned"
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+	@echo "libft executables: cleaned"
 
 re: fclean all
+	@echo "clean + rebuild: done"

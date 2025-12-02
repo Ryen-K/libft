@@ -1,5 +1,10 @@
 # libft
 
+## Verision History
+Latest:
+v2.0: file structure made more efficient and scalable for future use
+v1.0: basic Moulinette approved version
+
 ## Overview
 This repository contains my personal C library, "Libft", developed as part of the 42 school curriculum. The project involves reimplementing a variety of standard C library functions, as well as creating additional utility functions. This library serves as a foundational toolkit for subsequent projects within the curriculum and demonstrates my understanding of C programming fundamentals.
 

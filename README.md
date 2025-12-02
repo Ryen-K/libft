@@ -2,7 +2,7 @@
 
 ## Verision History
 Latest:
-v2.0: file structure made more efficient and scalable for future use
+v2.0: file structure made more efficient and scalable for future use 
 v1.0: basic Moulinette approved version
 
 ## Overview

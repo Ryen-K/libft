@@ -6,8 +6,25 @@
 /*   By: rkamkoum <rkamkoum@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:09:09 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/12/08 16:09:11 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/12/20 16:24:33 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+int     ft_lstsize(t_list *lst)
+{
+	int	size;
+	t_list	*current;
+
+	if (!lst)
+		return (0);
+	size = 0;
+	current = lst;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
+}

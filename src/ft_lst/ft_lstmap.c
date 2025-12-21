@@ -6,7 +6,7 @@
 /*   By: rkamkoum <rkamkoum@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:11:45 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/12/21 17:37:24 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/12/22 00:29:54 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(new_content);
 		if (!new_node)
 		{
+			if (new_content)
+				del(new_content);
 			ft_lstclear(&dest, del);
 			return (NULL);
 		}

@@ -6,16 +6,16 @@
 /*   By: rkamkoum <rkamkoum@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:09:09 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/12/20 16:24:33 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/12/21 17:56:32 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int	size;
-	t_list	*current;
+	t_list		*current;
+	int			size;
 
 	if (!lst)
 		return (0);

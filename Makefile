@@ -6,7 +6,7 @@
 #    By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 19:07:44 by rkamkoum          #+#    #+#              #
-#    Updated: 2025/12/02 15:57:41 by rkamkoum         ###   ####lausanne.ch    #
+#    Updated: 2025/12/21 17:46:38 by rkamkoum         ###   ####lausanne.ch    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,13 +40,18 @@ FUNCTS_PUT		= ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 FUNCTS_STR_DIR		= ft_str/
 FUNCTS_STR		= ft_split ft_strchr ft_strdup ft_striteri ft_strjoin	\
 			ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp	\
-			ft_strnstr ft_strrchr ft_strtrim ft_substr			
+			ft_strnstr ft_strrchr ft_strtrim ft_substr
+
+FUNCTS_LST_DIR		= ft_lst/
+FUNCTS_LST		= ft_lstnew ft_lstadd_front ft_lstadd_back ft_lstlast	\
+			ft_lstsize ft_lstdelone ft_lstclear ft_lstmap ft_lstiter
 
 SRC_FILES+=$(addprefix $(FUNCTS_TO_DIR),$(FUNCTS_TO))
 SRC_FILES+=$(addprefix $(FUNCTS_MEM_DIR),$(FUNCTS_MEM))
 SRC_FILES+=$(addprefix $(FUNCTS_IS_DIR),$(FUNCTS_IS))
 SRC_FILES+=$(addprefix $(FUNCTS_PUT_DIR),$(FUNCTS_PUT))
 SRC_FILES+=$(addprefix $(FUNCTS_STR_DIR),$(FUNCTS_STR))
+SRC_FILES+=$(addprefix $(FUNCTS_LST_DIR),$(FUNCTS_LST))
 
 SRC		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -73,6 +78,7 @@ $(OBJSF):
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_IS_DIR)
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_PUT_DIR)
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_STR_DIR)
+	@mkdir -p $(OBJ_DIR)$(FUNCTS_LST_DIR)
 
 clean:
 	$(RM) -r $(OBJ_DIR)

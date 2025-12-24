@@ -6,7 +6,7 @@
 /*   By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:55:01 by rkamkoum          #+#    #+#             */
-/*   Updated: 2025/12/08 17:39:22 by rkamkoum         ###   ####lausanne.ch   */
+/*   Updated: 2025/12/24 17:26:40 by rkamkoum         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 #endif

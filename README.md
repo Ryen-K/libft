@@ -11,8 +11,10 @@ The library includes implementations of the following types of functions:
 *   **Memory Manipulation**: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`
 *   **String Manipulation**: `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_strmapi`, `ft_striteri`, `ft_split`
 *   **Conversion**: `ft_atoi`, `ft_itoa`
-*   **Output (File Descriptor)** : `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
+*   **Output (File Descriptor)**: `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
 *   **Linked List Manipulation (Bonus)**: `ft_lstnew`, `ft_lstadd_front`, `ft_lstadd_back`, `ft_lstsize`, `ft_lstlast`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`
+*   **Printf**: `ft_printf` (handles conversions: c, s, p, d, i, u, x, X, %)
+*   **Get Next Line**: `get_next_line` (handles multiple file descriptors)
 
 ## Instructions
 
@@ -35,9 +37,10 @@ This will create or update `libft.a`, a static library archive containing the ch
 To link the `libft` library with your own project, use the following flags during compilation:
 Example with a main.c file
 ```bash
-cc -Wall -Wextra -Werror main.c -L. -lft -o my_program
+cc -Wall -Wextra -Werror main.c -I includes -L. -lft -o my_program
 ```
 
+* `-I includes` tells the compiler the exact location of libft.h, path to be ajusted depending on project file structure. 
 * `-L.` tells the compiler to look for libraries in the current directory.
 * `-lft` tells the compiler to link the `libft` library.
 
@@ -58,7 +61,8 @@ cc -Wall -Wextra -Werror main.c -L. -lft -o my_program
 *   **No AI was used for this project**
 The project was started with the old subject file, that encouraged research and struggles over AI use.
 
-#### Version v2.1 (current): Add linked list functions as part of the library
+#### Version v3.0 (current): Integrate ft_printf & get_next_line, move headers to new directory includes/
+#### Version v2.1: Add linked list functions as part of the library
 #### Version v2.0: updated file structure (no bonus) for easier & more convinient real life use
 #### Version v1.1: Add bonus part (linked lists): ready for re-submission.
 #### Version v1.0: Moulinette approved: 100/100

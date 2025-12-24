@@ -6,7 +6,7 @@
 #    By: rkamkoum <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 19:07:44 by rkamkoum          #+#    #+#              #
-#    Updated: 2025/12/24 23:55:03 by rkamkoum         ###   ####lausanne.ch    #
+#    Updated: 2025/12/25 00:39:12 by rkamkoum         ###   ####lausanne.ch    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,33 +23,41 @@ CFLAGS			= -Wall -Wextra -Werror -I
 RM			= rm -f
 AR			= ar rcs
 
+GREEN			= \033[0;32m
+YELLOW			= \033[0;33m
+BLUE			= \033[0;34m
+RESET			= \033[0m
+
 # Sources
 
 FUNCTS_TO_DIR		= ft_to/
 FUNCTS_TO		= ft_atoi ft_itoa ft_tolower ft_toupper
 
 FUNCTS_MEM_DIR		= ft_mem/
-FUNCTS_MEM		= ft_bzero ft_calloc ft_memchr ft_memcmp ft_memcpy	\
-			ft_memmove ft_memset
+FUNCTS_MEM		= ft_bzero ft_calloc ft_memchr ft_memcmp	\
+			ft_memcpy ft_memmove ft_memset
 
 FUNCTS_IS_DIR		= ft_is/
-FUNCTS_IS		= ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
+FUNCTS_IS		= ft_isalnum ft_isalpha ft_isascii ft_isdigit	\
+			ft_isprint
 
 FUNCTS_PUT_DIR		= ft_put/
 FUNCTS_PUT		= ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 
 FUNCTS_STR_DIR		= ft_str/
-FUNCTS_STR		= ft_split ft_strchr ft_strdup ft_striteri ft_strjoin	\
-			ft_strlcat ft_strlcpy ft_strlen ft_strmapi ft_strncmp	\
-			ft_strnstr ft_strrchr ft_strtrim ft_substr
+FUNCTS_STR		= ft_split ft_strchr ft_strdup ft_striteri	\
+			ft_strjoin ft_strlcat ft_strlcpy ft_strlen	\
+			ft_strmapi ft_strncmp ft_strnstr ft_strrchr	\
+			ft_strtrim ft_substr
 
 FUNCTS_LST_DIR		= ft_lst/
-FUNCTS_LST		= ft_lstnew ft_lstadd_front ft_lstadd_back ft_lstlast	\
-			ft_lstsize ft_lstdelone ft_lstclear ft_lstmap ft_lstiter
+FUNCTS_LST		= ft_lstnew ft_lstadd_front ft_lstadd_back	\
+			ft_lstlast ft_lstsize ft_lstdelone ft_lstclear	\
+			ft_lstmap ft_lstiter
 
 FUNCTS_PRINTF_DIR	= ft_printf/
-FUNCTS_PRINTF		= ft_printf ft_print_char ft_print_str ft_print_p	\
-			ft_print_d_i ft_print_u ft_print_x
+FUNCTS_PRINTF		= ft_printf ft_print_char ft_print_str		\
+			ft_print_p ft_print_d_i ft_print_u ft_print_x
 
 FUNCTS_GNL_DIR		= get_next_line/
 FUNCTS_GNL		= get_next_line
@@ -75,11 +83,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "\n\nmandatory | linked lists | ft_printf | get_next_line: Compiled.\n"	
-	@echo "libft: Ready!"
+	@echo "\n$(GREEN)[libft]:$(RESET) Compiled mandatory, linked lists, ft_printf & get_next_line."	
+	@echo "$(GREEN)[libft]:$(RESET) library ready!"
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJSF)
-#	@printf "Compiling %-50s\r" $<
 	@printf "."
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
@@ -93,16 +100,18 @@ $(OBJSF):
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_LST_DIR)
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_PRINTF_DIR)
 	@mkdir -p $(OBJ_DIR)$(FUNCTS_GNL_DIR)
-	@printf "libft: Compiling "
+	@echo "$(BLUE)[libft]:$(RESET) *all*"
+	@printf "$(YELLOW)[libft]:$(RESET) Compiling "
+	@touch $(OBJSF)
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
 	@$(RM) $(OBJSF)
-	@echo "libft: object files cleaned"
+	@echo "$(BLUE)[libft]:$(RESET) *clean* object files"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "libft: executables cleaned"
+	@echo "$(BLUE)[libft]:$(RESET) *fclean* executables"
 
 re: fclean all
-	@echo "libft: clean + rebuild done"
+	@echo "$(GREEN)[libft]:$(RESET) *re* "
